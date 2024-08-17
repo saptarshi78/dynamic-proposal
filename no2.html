@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proposal</title>
+    <style>
+        /* Provided CSS */
+        body {
+            background: linear-gradient(to bottom, #ff9a9e, #fad0c4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            color: #fff;
+        }
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+        }
+        .image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            object-fit: cover;
+        }
+        .question {
+            font-size: 32px;
+            margin: 20px 0;
+            font-weight: bold;
+            color: white;
+            text-shadow: 0 0 10px #ff66b2, 0 0 20px #ff66b2, 0 0 30px #ff66b2;
+        }
+        .button {
+            padding: 15px 30px;
+            font-size: 20px;
+            border: none;
+            border-radius: 10px;
+            margin: 10px;
+            cursor: pointer;
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+        .yes {
+            background-color: #ff66b2;
+        }
+        .no {
+            background-color: #ff4d4d;
+        }
+        .button:hover {
+            opacity: 0.8;
+        }
+    </style>
+<link rel="stylesheet" href="style.css">
+<script src="script.js"></script>
+</head>
+<body>
+    <div class="stars"></div>
+    <div class="container">
+        <img src="https://media.tenor.com/SIyitsbGX-oAAAAi/milk-and-mocha-cute.gif" alt="Romantic Image" class="image">
+        <div class="question">Why are you not accepting my love? Please say "Yes".</div>
+        <button class="button yes" onclick="location.href='accept.html'">Yes</button>
+        <button class="button no" onclick="location.href='no3.html'">No</button>
+    </div>
+     <!-- Include JavaScript File -->
+     <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,166 @@
+body {
+    background: linear-gradient(to bottom, #ff9a9e, #fad0c4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    color: #fff;
+    overflow: hidden;
+    position: relative;
+}
+
+.container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 50px;
+    border-radius: 25px;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 2s ease-in-out;
+    z-index: 1;
+}
+
+.image {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    margin-bottom: 30px;
+    object-fit: cover;
+    border: 5px solid #fff;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.image:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.question {
+    font-size: 38px;
+    margin: 20px 0;
+    font-weight: bold;
+    color: #e75480;
+    text-shadow: 0 0 15px #e75480, 0 0 25px #e75480, 0 0 35px #e75480;
+    animation: glow 1.5s infinite alternate;
+}
+
+.button {
+    padding: 15px 35px;
+    font-size: 24px;
+    border: none;
+    margin: 15px;
+    cursor: pointer;
+    color: white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.3);
+    transition: width 0.3s ease, height 0.3s ease;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.button:hover::before {
+    width: 0;
+    height: 0;
+}
+
+.button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.yes {
+    background-color: #b565a7;
+    border-radius: 30px 10px;
+    background: linear-gradient(45deg, #b565a7, #8a2be2);
+}
+
+.no {
+    background-color: #c71585;
+    border-radius: 10px 30px;
+    background: linear-gradient(45deg, #c71585, #800080);
+}
+
+.yes:hover {
+    background: linear-gradient(45deg, #8a2be2, #b565a7);
+}
+
+.no:hover {
+    background: linear-gradient(45deg, #800080, #c71585);
+}
+
+.stars {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    background: transparent;
+    overflow: hidden;
+}
+
+.star {
+    position: absolute;
+    width: 16px; /* Default size */
+    height: 16px; /* Default size */
+    background: transparent;
+    border-radius: 50%;
+    clip-path: polygon(
+        50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%
+    );
+    background: white;
+    animation: twinkle 2s infinite ease-in-out;
+    transition: transform 0.5s ease;
+}
+
+.star.shooting {
+    animation: shoot 2s ease-out; /* Slower shooting speed */
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
+
+@keyframes shoot {
+    0% {
+        transform: translateY(0) translateX(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) translateX(-50vw) scale(0.5);
+        opacity: 0;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px #e75480, 0 0 20px #e75480, 0 0 30px #e75480;
+    }
+    to {
+        text-shadow: 0 0 20px #e75480, 0 0 40px #e75480, 0 0 60px #e75480;
+    }
+}
